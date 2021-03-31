@@ -25,7 +25,7 @@ module "project_out_allow_net_rule" {
   source  = "andrewCluey/azurefirewall-net-rule-collection/azurerm"
   version = "1.3.0"
 
-  azure_fw_name           = "CORE-FW"
+  azure_fw_name           = module.azfirewall.fw_name
   fw_resource_group_name  = "CORE-FW-RG"
   rule_collection_name    = "dev_project_allow_rules"
   rule_priority           = "300"
@@ -53,7 +53,7 @@ module "project_out_deny_net_rule" {
   source  = "andrewCluey/azurefirewall-net-rule-collection/azurerm"
   version = "1.3.0"
 
-  azure_fw_name           = "CORE-FW"
+  azure_fw_name           = module.azfirewall.fw_name
   fw_resource_group_name  = "CORE-FW-RG"
   rule_collection_name    = "dev_project_deny_rules"
   rule_priority           = "310"
