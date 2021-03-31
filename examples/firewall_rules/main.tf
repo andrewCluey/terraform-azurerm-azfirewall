@@ -10,7 +10,7 @@ data "azurerm_subnet" "azure_firewall" {
 
 module "azfirewall" {
   source  = "andrewCluey/azfirewall/azurerm"
-  version = "0.2.0"
+  version = "1.3.2"
   
   resource_group_name = "sazfw"
   subnet_id           = data.azurerm_subnet.azure_firewall.id
@@ -23,7 +23,7 @@ module "azfirewall" {
 
 module "project_out_allow_net_rule" {
   source  = "andrewCluey/azurefirewall-net-rule-collection/azurerm"
-  version = "1.2.0"
+  version = "1.3.0"
 
   azure_fw_name           = "CORE-FW"
   fw_resource_group_name  = "CORE-FW-RG"
@@ -51,7 +51,7 @@ module "project_out_allow_net_rule" {
 
 module "project_out_deny_net_rule" {
   source  = "andrewCluey/azurefirewall-net-rule-collection/azurerm"
-  version = "1.2.0"
+  version = "1.3.0"
 
   azure_fw_name           = "CORE-FW"
   fw_resource_group_name  = "CORE-FW-RG"
