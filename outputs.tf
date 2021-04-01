@@ -4,6 +4,11 @@ output "fw_name" {
 }
 
 output "fw_id" {
-  description = "The ID of the new firewall"
+  description = "The ID of the new Azure Firewall"
   value       = azurerm_firewall.az_firewall.id
+}
+
+output "object" {
+  description = "Output the full object"
+  value       = azurerm_firewall.az_firewall
 }
