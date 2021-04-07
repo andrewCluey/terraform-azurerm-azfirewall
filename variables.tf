@@ -4,11 +4,6 @@ variable "location" {
   default     = "uksouth"
 }
 
-variable "environment" {
-  type        = string
-  description = "description"
-}
-
 variable "resource_group_name" {
   type        = string
   description = "description"
