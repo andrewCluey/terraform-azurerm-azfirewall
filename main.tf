@@ -1,5 +1,5 @@
 locals {
-  name_prefix = "azfw-${var.environment}"
+  name_prefix = "azfw"
 }
 
 resource "azurerm_public_ip" "fw_ip" {
