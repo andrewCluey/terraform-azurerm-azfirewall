@@ -23,7 +23,7 @@ variable "tags" {
 variable "dns_servers" {
   type        = list(string)
   description = "A list of DNS servers that the Azure firewlal will direct DNS resolution requests to."
-  default     = []  # Uses Azure DNS for name resolution.
+  default     = null  # Uses Azure DNS for name resolution.
 }
 
 variable "azfw_policy_id" {
