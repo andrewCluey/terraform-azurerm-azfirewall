@@ -19,15 +19,11 @@ variable "tags" {
   description = "description"
 }
 
-variable "additional_public_ips" {
-  description = "The IDs of any additional public IP addresses that are to be assigned to the Firewall. Must be Static allocation & Standard sku."
-  default     = null # Uses Azure DNS for name resolution.
-}
 
 variable "dns_servers" {
   type        = list(string)
   description = "A list of DNS servers that the Azure firewlal will direct DNS resolution requests to."
-  default     = null
+  default     = []  # Uses Azure DNS for name resolution.
 }
 
 variable "azfw_policy_id" {

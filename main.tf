@@ -26,16 +26,9 @@ resource "azurerm_firewall" "az_firewall" {
     public_ip_address_id = azurerm_public_ip.fw_ip.id       # The Public IP must have a Static allocation and Standard sku.
   }
 
-  dynamic "ip_configuration" {
-    for_each = var.additional_public_ips
-    content {
-      name                 = ip_configuration.value.name
-      public_ip_address_id = ip_configuration.value.public_ip_address_id
-    }
-  }
-
   # management_ip_configuration
   # virtual_hub
+  # Additional Public IPs
 }
 
 
