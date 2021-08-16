@@ -12,3 +12,7 @@ output "object" {
   description = "Output the full object"
   value       = azurerm_firewall.az_firewall
 }
+
+output "firewall_private_ip" {
+  value = azurerm_firewall.example.ip_configuration.0.private_ip_address
+}
