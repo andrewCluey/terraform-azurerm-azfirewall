@@ -32,3 +32,8 @@ variable "azfw_policy_id" {
   default     = null
 }
 
+variable "firewall_name" {
+  type        = string
+  description = "The name to assign to the new Azure Firewall Resource."
+  default     = "azfw-default"
+}

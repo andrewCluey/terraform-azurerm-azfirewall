@@ -1,9 +1,5 @@
-locals {
-  name_prefix = "azfw"
-}
-
 resource "azurerm_public_ip" "fw_ip" {
-  name                = "${local.name_prefix}-public-ip"
+  name                = "${var.firewall_name}-public-ip"
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = "Static"
@@ -12,7 +8,7 @@ resource "azurerm_public_ip" "fw_ip" {
 }
 
 resource "azurerm_firewall" "az_firewall" {
-  name                = "${local.name_prefix}-fw"
+  name                = var.firewall_name
   location            = var.location 
   resource_group_name = var.resource_group_name
   dns_servers         = var.dns_servers
@@ -21,7 +17,7 @@ resource "azurerm_firewall" "az_firewall" {
 
 # The Subnet used for the Firewall must have the name ```AzureFirewallSubnet``` and the subnet mask must be at least a /26
   ip_configuration {
-    name                 = "${local.name_prefix}-fw-ip"
+    name                 = "${var.firewall_name}-fw-ip"
     subnet_id            = var.subnet_id
     public_ip_address_id = azurerm_public_ip.fw_ip.id       # The Public IP must have a Static allocation and Standard sku.
   }
