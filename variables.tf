@@ -38,10 +38,8 @@ variable "firewall_name" {
   default     = "azfw-default"
 }
 
-variable "fw_public_ip" {
+variable "fw_public_ip_name" {
   type        = string
   description = "The name to assign to the Public IP of the new Firewall."
   default     = null
 }
-
-var.fw_public_ip

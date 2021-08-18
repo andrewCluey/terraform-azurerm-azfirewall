@@ -1,5 +1,5 @@
 locals {
-  firewall_pip_name = var.fw_public_ip != "" ? var.fw_public_ip : "${var.firewall_name}-pip"
+  firewall_pip_name = var.fw_public_ip_name != "" ? var.fw_public_ip_name : "${var.firewall_name}-pip"
 }
 
 resource "azurerm_public_ip" "fw_ip" {
