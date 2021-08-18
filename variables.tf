@@ -37,3 +37,11 @@ variable "firewall_name" {
   description = "The name to assign to the new Azure Firewall Resource."
   default     = "azfw-default"
 }
+
+variable "fw_public_ip" {
+  type        = string
+  description = "The name to assign to the Public IP of the new Firewall."
+  default     = null
+}
+
+var.fw_public_ip

@@ -1,5 +1,9 @@
+locals {
+  firewall_pip_name = var.fw_public_ip != "" ? var.fw_public_ip : "${var.firewall_name}-pip"
+}
+
 resource "azurerm_public_ip" "fw_ip" {
-  name                = "${var.firewall_name}-public-ip"
+  name                = local.firewall_pip_name
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = "Static"
